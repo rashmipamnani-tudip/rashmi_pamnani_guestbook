@@ -1,0 +1,33 @@
+<div class="container col-lg-4 col-lg-offset-4 jumbotron">
+    <form [formGroup]="registerForm">
+
+        <div>
+            <label for="fname"><sup style="color: red">*</sup>Firstname:</label>
+            <input type="text" class="form-control" id="fname" formControlName="firstname" placeholder="Enter your first name">
+        </div>
+
+        <div>
+            <label for="lname"><sup style="color: red">*</sup>Lastname:</label>
+            <input type="text" class="form-control" id="lname" formControlName="lastname" placeholder="Enter your last name">
+        </div>
+
+        <div>
+            <label for="mail"><sup style="color: red">*</sup>Email</label>
+            <input type="email" class="form-control" id="mail" formControlName="email" placeholder="example@abc.com">
+        </div>
+
+        <div>
+            <label for="pwd"><sup style="color: red">*</sup>Password</label>
+            <input type="password" class="form-control" id="pwd" formControlName="psword" placeholder="Enter password">
+        </div>
+
+        <div>
+            <label for="cpwd"><sup style="color: red">*</sup>Confirm Password</label>
+            <input type="password" class="form-control" id="cpwd" formControlName="repass" placeholder="Re-enter password">
+        </div>
+
+        <small style="color:red" *ngIf="(registerForm.controls.firstname.hasError('required')||registerForm.controls.lastname.errors||registerForm.controls.psword.errors||registerForm.controls.repass.errors||registerForm.controls.mail.errors)"><sup>*</sup> field is required!</small>
+
+        <button type="submit" [routerLink]="['']">Register</button>
+    </form>
+</div>

@@ -1,0 +1,21 @@
+<br>
+<br>
+<br>
+<div class="container col-lg-4 col-lg-offset-4 jumbotron">
+    <form [formGroup]=" loginForm " novalidate (ngSubmit)="save(myForm.value, myForm.valid) ">
+        <div>
+            <h2 class="col-lg-offset-5">Login</h2>
+            <label for="email"><sup style="color: red">*</sup>Email:</label>
+            <input type="email" class="form-control" id="email" formControlName="email" placeholder="example@abc.com">
+        </div>
+
+        <div>
+            <label for="password"><sup style="color: red">*</sup>Password:</label>
+            <input type="password" class="form-control" id="password" formControlName="password" placeholder="Enter Password">
+        </div>
+        <br>
+        <small style="color:red" *ngIf="(loginForm.controls.email.hasError('required')||loginForm.controls.password.errors)"><sup>*</sup> field is required!</small>
+        <button class="btn btn-primary">Login</button> New User?
+        <button class="btn btn-primary" [routerLink]="['signup']">Register</button>
+    </form>
+</div>

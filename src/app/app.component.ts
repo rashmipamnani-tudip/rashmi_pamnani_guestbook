@@ -1,10 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import {FormGroup, FormControl, FormBuilder, Validators}from '@angular/forms'
+import {User} from './Login/loguser.interface'
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
-})
+   moduleId:" module.id",
+  selector: 'login',
+  templateUrl:'./app.component.html'
+  })
+
 export class AppComponent {
-  title = 'app works!';
+
 }
